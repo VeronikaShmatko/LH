@@ -7,7 +7,9 @@ describe("Раздел профиль", () => {
     cy.visit("/auth");
   });
   it.only("Test 1:Проверка, что если в разделе 'Редактирование профиля' оставить все поля пустыми и нажать сохранить,высветятся валидационные ошибки", () => {
-    loginMe();
+    cy.get('[name="phone"]').type(validUser.phone);
+    cy.get('[name = "password"]').type(validUser.password);
+    cy.get("#auth-form-submit").click();
     cy.get(".icon-wrapper").eq(4).click();
     cy.contains("Редактировать профиль").click();
     cy.get("#edit-profile-submit").click();
