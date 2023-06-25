@@ -2,11 +2,11 @@ import validUser from "/cypress/fixtures/validUser.json";
 import { loginMe } from "/cypress/support/utils";
 import { index } from "/cypress/support/index";
 
-describe("Страница авторизации пользователя", () => {
+describe("Раздел профиль", () => {
   beforeEach(() => {
     cy.visit("/auth");
   });
-  it.only("Test 1:Проверка, что если в разделе 'Редактирование профиля' оставить все поля пустыми и нажать сохранить то высветятся валидационные ошибки", () => {
+  it.only("Test 1:Проверка, что если в разделе 'Редактирование профиля' оставить все поля пустыми и нажать сохранить,высветятся валидационные ошибки", () => {
     loginMe();
     cy.contains("Профиль").click();
     cy.contains("Редактировать профиль").click();
